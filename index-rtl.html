@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>قالب تک صفحه</title>
+
+
+    <!--template style-->
+    <link rel="stylesheet" href="css/style-rtl.css" type="text/css">
+
+    <!--animation-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+    <!--fontello-->
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/fontello.css" type="text/css">
+
+    <!--font-awesome-->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- jquery -->
+    <script src="js/jquery-3.1.0.min.js"></script>
+
+
+
+    <!-- sticky menu -->
+    <script>
+        $(document).ready(function(){
+            $(document).on("scroll", function () {
+                if ($(document).scrollTop() > 80) {
+                    $("nav").removeClass("large").addClass("small");
+                } else {
+                    $("nav").removeClass("small").addClass("large");
+                }
+            });
+        });
+    </script>
+
+    <!--scrolla-->
+    <script src="js/scrolla.jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.animate').scrolla();
+        });
+    </script>
+
+    <!-- smooth scroll to element -->
+    <script>
+        $(document).ready(function () {
+            $('a[href^="#"]').on('click', function(event) {
+                var target = $(this.getAttribute('href'));
+                if( target.length ) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                }
+            });
+        })
+    </script>
+
+
+</head>
+<body>
+
+
+<div class="container">
+    <div class="row">
+<!---------------------------- start menu ---------------------------->
+        <nav class="menu" id="menu">
+            <a href="#"><h3 id="logo">نمونه</h3></a>
+            <ul>
+                <li class="active"><a href="#Home">خانه</a></li>
+                <li><a href="#Lessons">درس ها</a></li>
+                <li><a href="#Course">دوره ها</a></li>
+                <li><a href="#Product">محصولات</a></li>
+                <li><a href="#News">اخبار</a></li>
+                <li><a href="#About">دربار ما</a></li>
+                <li><a href="#Contact">ارتباط با ما</a></li>
+                <li>
+                    <input id="login-popup" class="login-popup-input" type="checkbox">
+                    <label for="login-popup" class="login-popup-label">ورود</label>
+                    <div class='login-modal'>
+                        <div class='content'>
+                            <div class="login-form">
+                                <h3>○ ورود ○</h3>
+                                <span class="login">
+                                    <input class="login-input" type="text" id="login-name" />
+                                    <label class="login-label" for="login-name">
+                                        <i class="icon-users-1 login-icon"></i>
+                                        <span class="login-content">نام کاربری</span>
+                                    </label>
+                                </span>
+                                <span class="login login-s">
+                                    <input class="login-input" type="text" id="login-email" />
+                                    <label class="login-label" for="login-email">
+                                        <i class="icon-mail-5 login-icon"></i>
+                                        <span class="login-content">ایمیل</span>
+                                    </label>
+                                </span>
+                                <a href="#"><button class="login-btn login-btn-s">ورود</button></a>
+                            </div>
+                            <div class="register-form">
+                                <h3>○ ثبت نام ○</h3>
+                                <span class="register">
+                                    <input class="register-input" type="email" id="register-name" />
+                                    <label class="register-label" for="register-name">
+                                        <i class="icon-users-1 register-icon"></i>
+                                        <span class="register-content">نام/نام خانوادگی</span>
+                                    </label>
+                                </span>
+                                <span class="register register-s">
+                                    <input class="register-input" type="email" id="register-email" />
+                                    <label class="register-label" for="register-email">
+                                        <i class="icon-mail-5 register-icon"></i>
+                                        <span class="register-content">ایمیل</span>
+                                    </label>
+                                </span>
+
+                                <ul>
+                                    <li>
+                                        <input type="radio" id="f-option" name="selector">
+                                        <label for="f-option">زن</label>
+                                        <div class="check"></div>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="s-option" name="selector">
+                                        <label for="s-option">مرد</label>
+                                        <div class="check"><div class="inside"></div></div>
+                                    </li>
+                                </ul>
+
+                                <a href="#"><button class="register-btn register-btn-s">ثبت نام</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <input id="search-popup" type="checkbox" class="input-search">
+                    <label for="search-popup" class="search-label">
+                        <i class="icon-search"></i>
+                    </label>
+                    <div class='search-modal'>
+                        <div class='search-content'>
+                            <span class="search">
+                                <input id="search" class="search-input" type="text">
+                                <label for="search" class="search-label2">
+                                    <span class="search-content2">جستجو</span>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    <!-----------------------------end menu----------------------------->
+
+    <!----------------------start header---------------------->
+        <section class="header" id="Home">
+            <div class="wrapper">
+                <div class="slider-wrapper">
+                    <input type="radio" name="slider" class="slide-radio1" checked id="slider_1">
+                    <input type="radio" name="slider" class="slide-radio2" id="slider_2">
+                    <input type="radio" name="slider" class="slide-radio3" id="slider_3">
+                    <input type="radio" name="slider" class="slide-radio4" id="slider_4">
+                    <div class="slider-pagination">
+                        <label for="slider_1" class="page1"></label>
+                        <label for="slider_2" class="page2"></label>
+                        <label for="slider_3" class="page3"></label>
+                        <label for="slider_4" class="page4"></label>
+                    </div>
+                    <div class="next control">
+                        <label for="slider_1" class="numb1"><i class="fa fa-arrow-circle-right"></i></label>
+                        <label for="slider_2" class="numb2"><i class="fa fa-arrow-circle-right"></i></label>
+                        <label for="slider_3" class="numb3"><i class="fa fa-arrow-circle-right"></i></label>
+                        <label for="slider_4" class="numb4"><i class="fa fa-arrow-circle-right"></i></label>
+                    </div>
+                    <div class="previous control">
+                        <label for="slider_1" class="numb1"><i class="fa fa-arrow-circle-left"></i></label>
+                        <label for="slider_2" class="numb2"><i class="fa fa-arrow-circle-left"></i></label>
+                        <label for="slider_3" class="numb3"><i class="fa fa-arrow-circle-left"></i></label>
+                        <label for="slider_4" class="numb4"><i class="fa fa-arrow-circle-left"></i></label>
+                    </div>
+                    <div class="slider slide1">
+                        <div>
+                            <div class="h-header">
+                                <svg width="1000px" height="270px">
+                                    <symbol id="s-text">
+                                        <text text-anchor="middle" x="50%" y="50%" dy=".35em">
+                                                نمونه قالب تک صفحه ای
+                                        </text>
+                                    </symbol>
+                                    <use xlink:href="#s-text" class="text"></use>
+                                    <use xlink:href="#s-text" class="text"></use>
+                                    <use xlink:href="#s-text" class="text"></use>
+                                    <use xlink:href="#s-text" class="text"></use>
+                                    <use xlink:href="#s-text" class="text"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="button">بیشتر بخوانید</a>
+                        </div>
+                    </div>
+                    <div class="slider slide2">
+                        <div>
+                            <div class="h-header">
+                                <svg width="1000px" height="270px">
+                                    <symbol id="s-text">
+                                        <text text-anchor="middle" x="50%" y="50%" dy=".35em">
+                                            نمونه قالب تک صفحه ای
+                                        </text>
+                                    </symbol>
+                                    <use xlink:href="#s-text" class="text"></use>
+                                    <use xlink:href="#s-text" class="text"></use>
+                                    <use xlink:href="#s-text" class="text"></use>
+                                    <use xlink:href="#s-text" class="text"></use>
+                                    <use xlink:href="#s-text" class="text"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="button">بیشتر بخوانید</a>
+                        </div>
+                    </div>
+                    <div class="slider slide3">
+                        <div>
+                            <div class="h-header">
+                                <svg width="1000px" height="270px">
+                                    <symbol id="s-text">
+                                        <text text-anchor="middle" x="50%" y="50%" dy=".35em">
+                                            نمونه قالب تک صفحه ای
+                                        </text>
+                                    </symbol>
+                                    <use xlink:href="#s-text" class="text"></use>
+                                    <use xlink:href="#s-text" class="text"></use>
+                                    <use xlink:href="#s-text" class="text"></use>
+                                    <use xlink:href="#s-text" class="text"></use>
+                                    <use xlink:href="#s-text" class="text"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="button">بیشتر بخوانید</a>
+                        </div>
+                    </div>
+                    <div class="slider slide4">
+                        <div>
+                            <div class="h-header">
+                                <svg width="1000px" height="270px">
+                                    <symbol id="s-text">
+                                        <text text-anchor="middle" x="50%" y="50%" dy=".35em">
+                                            نمونه قالب تک صفحه ای
+                                        </text>
+                                    </symbol>
+                                    <use xlink:href="#s-text" class="text"></use>
+                                    <use xlink:href="#s-text" class="text"></use>
+                                    <use xlink:href="#s-text" class="text"></use>
+                                    <use xlink:href="#s-text" class="text"></use>
+                                    <use xlink:href="#s-text" class="text"></use>
+                                </svg>
+                            </div>
+                            <a href="#" class="button">بیشتر بخوانید</a>
+                        </div>
+                    </div>
+                    <div class="down-btn">
+                        <a class="back-to-down down" id="go-down">
+                            <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-------------------------end header------------------------->
+
+    <!----------------------------- Our Slogan ------------------------->
+        <section id="slogan">
+            <div class="slogan-wrapper animate" data-animate="zoomIn">
+                <div class="slogan-nav">
+                    <div class="red animate" data-animate="zoomIn" data-delay="0.6s"></div>
+                    <div class="yellow animate" data-animate="zoomIn" data-delay="0.8s"></div>
+                    <div class="green animate" data-animate="zoomIn" data-delay="1s"></div>
+                </div>
+                <div class="slogan-content">
+                    <p class="heading-slogan anim-typewriter1">شعار ما</p>
+                    <p class="text-slogan anim-typewriter2">هر روز تلاش کنید و با ما پیشرفت کنید</p>
+                </div>
+            </div>
+        </section>
+    <!----------------------------- Our Slogan ------------------------->
+
+    <!----------------------start Lessons---------------------->
+        <section id="Lessons">
+            <div class="wrapper">
+                <h3 class="lessons animate" data-animate="bounceIn">درس ها</h3>
+                <div class="lessons-content">
+                    <div class="video-text">
+                        <div class="left-video1 video animate" data-animate="slideInRight"></div>
+                        <div class="right-video-content1 text animate" data-animate="slideInLeft" data-iteration="3">
+                            <a href="#"><h2>ساخت قالب</h2></a>
+                            <p>
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                            </p>
+                            <span>وب | قالب | قوانین | اجزا</span>
+                        </div>
+                    </div>
+                    <div class="video-text">
+                        <div class="left-video-content2 text animate" data-animate="slideInRight" data-iteration="2">
+                            <a href="#"><h2>آموزش مبتدی برنامه نویسی</h2></a>
+                            <p>
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                            </p>
+                            <span>C++ | C | PHP</span>
+                        </div>
+                        <div class="right-video2 video animate" data-animate="slideInLeft"></div>
+                    </div>
+                    <div class="video-text">
+                        <div class="left-video3 video animate" data-animate="slideInRight"></div>
+                        <div class="right-video-content3 text animate" data-animate="slideInLeft" data-iteration="3">
+                            <a href="#"><h2>در طراحی UI قوی شوید</h2></a>
+                            <p>
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                            </p>
+                            <span>UI | UX | طراحی | FLAT UI</span>
+                        </div>
+                    </div>
+                    <div class="video-text">
+                        <div class="left-video-content4 text animate" data-animate="slideInRight" data-iteration="2">
+                            <a href="#"><h2>یک برنامه نیس قهار شوید</h2></a>
+                            <p>
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                            </p>
+                            <span>دانستن قوانین | کد زدن</span>
+                        </div>
+                        <div class="right-video4 video animate" data-animate="slideInLeft"></div>
+                    </div>
+                    <div class="video-text">
+                        <div class="left-video5 video animate" data-animate="slideInRight"></div>
+                        <div class="right-video-content5 text animate" data-animate="slideInLeft" data-iteration="3">
+                            <a href="#"><h2>چگونه از ابزارها استفاده کنیم؟</h2></a>
+                            <p>
+
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                            </p>
+                            <span>MATERIAL UI | FLAT | رنگ ها</span>
+                        </div>
+                    </div>
+                    <div class="video-text">
+                        <div class="left-video-content6 text animate" data-animate="slideInRight"  data-iteration="2">
+                            <a href="#"><h2>چگونه از پالت رنگ ها استفاده کنیم؟</h2></a>
+                            <p>
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                            </p>
+                            <span>وب سایت | رنگ ها</span>
+                        </div>
+                        <div class="right-video6 video animate" data-animate="slideInLeft"></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </section>
+    <!----------------------end Lessons---------------------->
+
+    <!----------------------start Course---------------------->
+        <section id="Course">
+            <div class="wrapper">
+                <h3 class="course animate" data-animate="bounceIn">دوره ها</h3>
+                <div class="course-content">
+                    <div class="course-content-1 course-c animate col-l4 col-m3 col-s6" data-animate="bounceInUp">
+                        <i class="icon-graphic-design-4"></i>
+                        <span>طراحی گرافیکی</span>
+                        <p>
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                        </p>
+                        <div class="course-seprator"></div>
+                    </div>
+                    <div class="course-content-2 course-c animate col-l4 col-m3 col-s6" data-animate="bounceInUp">
+                        <i class="icon-video-player"></i>
+                        <span>انیمیشن</span>
+                        <p>
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                        </p>
+                        <div class="course-seprator"></div>
+                    </div>
+                    <div class="course-content-3 course-c animate col-l4 col-m3 col-s6" data-animate="bounceInLeft">
+                        <i class="icon-web-design"></i>
+                        <span>طراحی واکنش گرا</span>
+                        <p>
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است..
+                        </p>
+                        <div class="course-seprator"></div>
+                    </div>
+                    <div class="course-content-4 course-c animate col-l4 col-m3 col-s6" data-animate="bounceInRight">
+                        <i class="icon-diamond"></i>
+                        <span>طراحی Flat</span>
+                        <p>
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                        </p>
+                        <div class="course-seprator"></div>
+                    </div>
+                    <div class="course-content-5 course-c animate col-l4 col-m3 col-s6" data-animate="bounceInUp">
+                        <i class="icon-smartphone"></i>
+                        <span>UX/UI طراحی</span>
+                        <p>
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                        </p>
+                        <div class="course-seprator"></div>
+                    </div>
+                    <div class="course-content-6 course-c animate col-l4 col-m3 col-s6" data-animate="bounceInUp">
+                        <i class="icon-earth"></i>
+                        <span>Rendering</span>
+                        <p>
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                        </p>
+                        <div class="course-seprator"></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </section>
+    <!----------------------end Course---------------------->
+
+    <!----------------------start Product---------------------->
+        <section id="Product">
+            <div class="wrapper">
+                <h3 class="product animate" data-animate="bounceIn">محصولات</h3>
+                <div class="product-content">
+                    <ul class="cd-gallery">
+                        <li>
+                            <a href="#">
+                                <ul class="cd-item-wrapper">
+                                    <li class="selected">
+                                        <img class="product-img" src="img/product.jpg" alt="Preview image">
+                                    </li>
+                                    <li class="move-right" data-sale="true" data-price="$22">
+                                        <img src="img/product.jpg" alt="Preview image">
+                                    </li>
+                                    <li>
+                                        <img src="img/product.jpg" alt="Preview image">
+                                    </li>
+                                </ul>
+                            </a>
+                            <div class="cd-item-info">
+                                <b><a href="#0">نام محصول</a></b>
+
+                                <em class="cd-price">$26</em>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <ul class="cd-item-wrapper">
+                                    <li class="selected">
+                                        <img class="product-img" src="img/product.jpg" alt="Preview image">
+                                    </li>
+                                    <li class="move-right">
+                                        <img src="img/product.jpg" alt="Preview image">
+                                    </li>
+                                    <li>
+                                        <img src="img/product.jpg" alt="Preview image">
+                                    </li>
+                                </ul>
+                            </a>
+                            <div class="cd-item-info">
+                                <b><a href="#0">نام محصول</a></b>
+
+                                <em class="cd-price">$42</em>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <ul class="cd-item-wrapper">
+                                    <li class="selected">
+                                        <img class="product-img" src="img/product.jpg" alt="Preview image">
+                                    </li>
+                                    <li class="move-right">
+                                        <img src="img/product.jpg" alt="Preview image">
+                                    </li>
+                                    <li>
+                                        <img src="img/product.jpg" alt="Preview image">
+                                    </li>
+                                </ul>
+                            </a>
+                            <div class="cd-item-info">
+                                <b><a href="#0">نام محصول</a></b>
+
+                                <em class="cd-price">$235</em>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <ul class="cd-item-wrapper">
+                                    <li class="selected">
+                                        <img class="product-img" src="img/product.jpg" alt="Preview image">
+                                    </li>
+                                    <li class="move-right" data-sale="true" data-price="$22">
+                                        <img src="img/product.jpg" alt="Preview image">
+                                    </li>
+                                    <li>
+                                        <img src="img/product.jpg" alt="Preview image">
+                                    </li>
+                                </ul>
+                            </a>
+                            <div class="cd-item-info">
+                                <b><a href="#0">نام محصول</a></b>
+
+                                <em class="cd-price">$26</em>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <ul class="cd-item-wrapper">
+                                    <li class="selected">
+                                        <img class="product-img" src="img/product.jpg" alt="Preview image">
+                                    </li>
+                                    <li class="move-right">
+                                        <img src="img/product.jpg" alt="Preview image">
+                                    </li>
+                                    <li>
+                                        <img src="img/product.jpg" alt="Preview image">
+                                    </li>
+                                </ul>
+                            </a>
+                            <div class="cd-item-info">
+                                <b><a href="#0">نام محصول</a></b>
+
+                                <em class="cd-price">$42</em>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <ul class="cd-item-wrapper">
+                                    <li class="selected">
+                                        <img class="product-img" src="img/product.jpg" alt="Preview image">
+                                    </li>
+                                    <li class="move-right">
+                                        <img src="img/product.jpg" alt="Preview image">
+                                    </li>
+                                    <li>
+                                        <img src="img/product.jpg" alt="Preview image">
+                                    </li>
+                                </ul>
+                            </a>
+                            <div class="cd-item-info">
+                                <b><a href="#0">نام محصول</a></b>
+
+                                <em class="cd-price">$235</em>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </section>
+    <!----------------------end Product---------------------->
+
+    <!----------------------start News---------------------->
+        <section id="News">
+            <div class="wrapper">
+                <h3 class="news animate" data-animate="bounceIn">اخبار</h3>
+                <div class="TimeLine-News">
+                    <div class="news-bg1 news-bg-s animate" data-animate="fadeIn">
+                        <div class="point1 animate" data-animate="bounceInRight" data-delay="0.5s"></div>
+                        <div class="content1 content-s animate" data-animate="bounceInLeft" data-delay="1s">
+                            <span class="news-date1 news-date-s animate" data-animate="bounceInRight" data-delay="1.5s">
+                                <span class="news-date-month">آبان</span>
+                                <span class="news-date-year">1395</span>
+                            </span>
+                            <h2>عنوان</h2>
+                            <p>
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.                            </p>
+                        </div>
+                    </div>
+                    <div class="news-bg2 news-bg-s animate" data-animate="fadeIn">
+                        <div class="point2 animate" data-animate="bounceInLeft" data-delay="0.5s"></div>
+                        <div class="content2 content-s animate" data-animate="bounceInRight" data-delay="1s">
+                            <span class="news-date2 news-date-s animate" data-animate="bounceInLeft" data-delay="1.5s">
+                                <span class="news-date-month">مهر</span>
+                                <span class="news-date-year">1396</span>
+                            </span>
+                            <h2>عنوان</h2>
+                            <p>
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.                            </p>
+                        </div>
+                    </div>
+                    <div class="news-bg3 news-bg-s animate" data-animate="fadeIn">
+                        <div class="point3 animate" data-animate="bounceInRight" data-delay="0.5s"></div>
+                        <div class="content3 content-s animate" data-animate="bounceInLeft" data-delay="1s">
+                            <span class="news-date3 news-date-s animate" data-animate="bounceInRight" data-delay="1.5s">
+                                <span class="news-date-month">شهریور</span>
+                                <span class="news-date-year">1395</span>
+                            </span>
+                            <h2>عنوان</h2>
+                            <p>
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.                            </p>
+                        </div>
+                    </div>
+                    <div class="news-bg4 news-bg-s animate" data-animate="fadeIn">
+                        <div class="point4 animate" data-animate="bounceInLeft" data-delay="0.5s"></div>
+                        <div class="content4 content-s animate" data-animate="bounceInRight" data-delay="1s">
+                            <span class="news-date4 news-date-s animate" data-animate="bounceInLeft" data-delay="1.5s">
+                                <span class="news-date-month">تیر</span>
+                                <span class="news-date-year">1394</span>
+                            </span>
+                            <h2>عنوان</h2>
+                            <p>
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.                            </p>
+                        </div>
+                    </div>
+                    <div class="news-bg5 news-bg-s animate" data-animate="fadeIn">
+                        <div class="point5 animate" data-animate="bounceInRight" data-delay="0.5s"></div>
+                        <div class="content5 content-s animate" data-animate="bounceInLeft" data-delay="1s">
+                            <span class="news-date5 news-date-s animate" data-animate="bounceInRight" data-delay="1.5s">
+                                <span class="news-date-month">اسفند</span>
+                                <span class="news-date-year">1393</span>
+                            </span>
+                            <h2>عنوان</h2>
+                            <p>
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </section>
+    <!----------------------end News---------------------->
+
+    <!----------------------start About---------------------->
+        <section id="About">
+            <div class="wrapper">
+                <div class="about-bg-1 about-bg">
+                    <div class="about-black-box animate" data-animate="bounceInRight" data-delay="0.2s">
+                        <h3 class="about-heading animate" data-animate="bounceInLeft" data-delay="0.4s">اهداف ما</h3>
+                        <p class="animate" data-animate="bounceInLeft" data-delay="0.6s">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
+                        </p>
+                        <a href="#" class="about-btn animate" data-animate="bounceInLeft" data-delay="0.8s">بیشتر بخوانید</a>
+                    </div>
+                </div>
+                <div class="about-bg-2 about-bg">
+                    <div class="about-white-box animate" data-animate="bounceInRight" data-delay="1s">
+                        <h3 class="about-heading animate" data-animate="bounceInLeft" data-delay="1.2s">آینده ما</h3>
+                        <p class="animate" data-animate="bounceInLeft" data-delay="1.4s">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
+                        </p>
+                        <a href="#" class="about-btn animate" data-animate="bounceInLeft" data-delay="1.6s">بیشتر بخوانید</a>
+                    </div>
+                </div>
+                <div class="about-bg-3 about-bg">
+                    <div class="about-black-box about-black-box2 animate" data-animate="bounceInLeft" data-delay="1.8s">
+                        <h3 class="about-heading animate" data-animate="bounceInRight" data-delay="2s">تیم ما</h3>
+                        <p class="animate" data-animate="bounceInRight" data-delay="2.2s">
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.                        </p>
+                        <a href="#" class="about-btn animate" data-animate="bounceInRight" data-delay="2.4s">بیشتر بخوانید</a>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </section>
+    <!---------------------------end About--------------------------->
+
+    <!--------------------------- start about counter ---------------------------->
+        <section id="about-counter">
+            <div class="wrapper">
+                <div class="about-counter-content last-about-content animate" data-animate="slideInLeft">
+                    <div class="counter">
+                        <i class="icon-flag"></i>
+                        <h2 class="timer">50</h2>
+                        <p>پروژه های تکمیلی</p>
+                    </div>
+                </div>
+                <div class="about-counter-content animate" data-animate="slideInUp">
+                    <div class="counter">
+                        <i class="icon-notebook-4"></i>
+                        <h2 class="timer">2405</h2>
+                        <p>درس ها</p>
+                    </div>
+                </div>
+                <div class="about-counter-content animate" data-animate="slideInUp">
+                    <div class="counter">
+                        <i class="icon-video-player-2"></i>
+                        <h2 class="timer">105</h2>
+                        <p>دوره ها</p>
+                    </div>
+                </div>
+                <div class="about-counter-content animate" data-animate="slideInRight">
+                    <div class="counter">
+                        <i class="icon-television-1"></i>
+                        <h2 class="timer">10</h2>
+                        <p>تجربه ی اساتید</p>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </section>
+    <!--------------------------- start about counter ---------------------------->
+
+    <!----------------------start Contact---------------------->
+        <section id="Contact">
+            <div class="wrapper">
+                <div class="contact-bg">
+                    <div class="contact-info">
+                        <div class="email-line animate" data-animate="zoomIn" data-delay="0s"></div>
+                        <i class="icon-mail-5 mail animate" data-animate="zoomIn" data-delay="0.2s">
+                            <span class=" animate" data-animate="zoomIn" data-delay="0.4s">Admin.mail@Example.com</span>
+                        </i>
+                        <div class="phone-line animate" data-animate="zoomIn" data-delay="0.6s"></div>
+                        <i class="icon-phone-call-2 phone animate" data-animate="zoomIn" data-delay="0.8s">
+                            <span  class=" animate" data-animate="zoomIn" data-delay="1s">+986669876543</span>
+                        </i>
+                        <div class="telegram-line animate" data-animate="zoomIn" data-delay="1.2s"></div>
+                        <i class="icon-paper-plane-2 telegram animate" data-animate="zoomIn" data-delay="1.4s">
+                            <span class=" animate" data-animate="zoomIn" data-delay="1.6s">telegram.me/JoinUs</span>
+                        </i>
+                    </div>
+                    <div class="contact-form">
+                        <span class="contact animate" data-animate="zoomIn" data-delay="1.4s">
+                            <input class="contact_field contact_field-s" type="text" id="contact-name" />
+                            <label class="contact_label contact_label-s" for="contact-name">
+                                <span class="contact_label-content contact_label-content-s" data-content="نام">نام</span>
+                            </label>
+                        </span>
+                        <span class="contact animate" data-animate="zoomIn" data-delay="1.6s">
+                            <input class="contact_field contact_field-s" type="email" id="contact-email" />
+                            <label class="contact_label contact_label-s" for="contact-email">
+                                <span class="contact_label-content contact_label-content-s" data-content="ایمیل">ایمیل</span>
+                            </label>
+                        </span>
+                        <span class="contact animate" data-animate="zoomIn" data-delay="1.8s">
+                            <input class="contact_field contact_field-s" type="tel" id="contact-mobile" />
+                            <label class="contact_label contact_label-s" for="contact-mobile">
+                                <span class="contact_label-content contact_label-content-s" data-content="موبایل">موبایل</span>
+                            </label>
+                        </span>
+                        <span class="contact animate" data-animate="zoomIn" data-delay="2s">
+                            <input class="contact_field contact_field-s" type="text" id="contact-subject" />
+                            <label class="contact_label contact_label-s" for="contact-subject">
+                                <span class="contact_label-content contact_label-content-s" data-content="موضوع">موضوع</span>
+                            </label>
+                        </span>
+                        <span class="contact animate" data-animate="zoomIn" data-delay="2.2s">
+                            <input class="contact_field contact_field-s" type="text" id="contact-message" />
+                            <label class="contact_label contact_label-s" for="contact-message">
+                                <span class="contact_label-content contact_label-content-s" data-content="پیام">پیام</span>
+                            </label>
+                        </span>
+                        <button class="submit-contact submit-contact-s animate" data-animate="zoomIn" data-delay="2.6s">
+                            <span>ارتباط با ما</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </section>
+    <!----------------------end Contact---------------------->
+
+    <!--------------------- start google map --------------------->
+        <section id="google-map">
+            <div class="map">
+                <div class="map-overlay"></div>
+            </div>
+        </section>
+    <!--------------------- end google map --------------------->
+
+    <!----------------------start footer---------------------->
+        <footer id="footer">
+            <div class="wrapper">
+                <div id="footer-links">
+                    <ul>
+                        <li class="animate" data-animate="zoomIn" data-delay="0s"><h5>ارتباط با ما</h5></li>
+                        <li>
+                            <div class="contact-phone animate" data-animate="zoomIn" data-delay="0.2s">
+                                <i class="icon-smartphone-10"></i>
+                                <p>+986669876543</p>
+                            </div>
+                            <div class="contact-email animate" data-animate="zoomIn" data-delay="0.4s">
+                                <i class="icon-mail-5"></i>
+                                <p>Admin.mail@Example.com</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="animate" data-animate="zoomIn" data-delay="0.6s"><h5>مقاله ها</h5></li>
+                        <li class="animate" data-animate="zoomIn" data-delay="0.8s"><a href="#">درباره ما</a></li>
+                        <li class="animate" data-animate="zoomIn" data-delay="1s"><a href="#">ملاقات با تیم</a></li>
+                        <li class="animate" data-animate="zoomIn" data-delay="1.2s"><a href="#">کار های ما</a></li>
+                        <li class="animate" data-animate="zoomIn" data-delay="1.4s"><a href="#">پشتیبان</a></li>
+                    </ul>
+                    <ul>
+                        <li class="animate" data-animate="zoomIn" data-delay="1.6s"><h5>لینک ها</h5></li>
+                        <li class="animate" data-animate="zoomIn" data-delay="1.8s"><a href="#">درباره ما</a></li>
+                        <li class="animate" data-animate="zoomIn" data-delay="2s"><a href="#">ملاقات با تیم</a></li>
+                        <li class="animate" data-animate="zoomIn" data-delay="2.2s"><a href="#">کار های ما</a></li>
+                        <li class="animate" data-animate="zoomIn" data-delay="2.4s"><a href="#">پشتیبان</a></li>
+                    </ul>
+                    <ul>
+                        <li class="animate" data-animate="zoomIn" data-delay="2.6s"><h5>اخبار</h5></li>
+                        <li class="animate" data-animate="zoomIn" data-delay="2.8s"><a href="#">درباره ما</a></li>
+                        <li class="animate" data-animate="zoomIn" data-delay="3s"><a href="#">ملاقات با تیم</a></li>
+                        <li class="animate" data-animate="zoomIn" data-delay="3.2s"><a href="#">کار های ما</a></li>
+                        <li class="animate" data-animate="zoomIn" data-delay="3.4s"><a href="#">پشتیبان</a></li>
+                    </ul>
+                    <ul>
+                        <li class="animate" data-animate="zoomIn" data-delay="3.6s"><h5>به زودی</h5></li>
+                        <li class="animate" data-animate="zoomIn" data-delay="3.8s"><a href="#">درباره ما</a></li>
+                        <li class="animate" data-animate="zoomIn" data-delay="4s"><a href="#">ملاقات با تیم</a></li>
+                        <li class="animate" data-animate="zoomIn" data-delay="4.2s"><a href="#">کار های ما</a></li>
+                        <li class="animate" data-animate="zoomIn" data-delay="4.4s"><a href="#">پشتیبان</a></li>
+                    </ul>
+                    <ul>
+                        <li class="animate" data-animate="zoomIn" data-delay="4.6s"><h5>پیوستن به خبرنامه</h5></li>
+                        <li class="animate" data-animate="zoomIn" data-delay="4.8s"><p>ایمیل های جدید را در اینباکس خود داشته باشید</p></li>
+                        <li class="animate" data-animate="zoomIn" data-delay="5s">
+                            <span class="input input-s">
+                                <input class="input_field" type="email" id="email-newsletter" />
+                                <label class="input_label" for="email-newsletter">
+                                    <span class="input_label-content">ایمیل خود را وارد کنید...</span>
+                                </label>
+                                <svg class="graphic" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+                                    <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
+                                </svg>
+                            </span>
+                        </li>
+                        <li class="animate" data-animate="zoomIn" data-delay="5.2s">
+                            <button class="submit-newsletter submit-newsletter-s">
+                                <span>به ما بپیوندید!</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="social-icons">
+                    <ul>
+                        <li><a href="https://www.dropbox.com"><img src="img/dropbox.png"></a></li>
+                        <li><a href="https://www.facebook.com"><img src="img/facebook.png"></a></li>
+                        <li><a href="https://plus.google.com"><img src="img/google-.png"></a></li>
+                        <li><a href="https://www.instagram.com"><img src="img/instagram.png"></a></li>
+                        <li><a href="https://www.linkedin.com"><img src="img/linkedin.png"></a></li>
+                        <li><a href="https://www.pinterest.com"><img src="img/pinterest.png"></a></li>
+                        <li><a href="https://www.skype.com"><img src="img/skype.png"></a></li>
+                        <li><a href="https://twitter.com"><img src="img/twitter.png"></a></li>
+                        <li><a href="https://www.youtube.com"><img src="img/youtube.png"></a></li>
+                    </ul>
+                </div>
+                <div id="footer-info">
+                    <p>© 1396 قالب تک صفحه ای. ساخته شده توسط نام کمپانی-</p>
+                </div>
+                <div class="up-btn">
+                    <a class="back-to-up up" id="go-up">
+                        <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    <!----------------------end footer---------------------->
+    </div>
+</div>
+
+<!--script for smooth scroll up and down page-->
+<script>
+    var $down = $("#go-down");
+    var $up = $("#go-up");
+    $down.on("click", function() {
+        $up.velocity("scroll", {
+            duration: 5000,
+            easing: "easeInBack"
+        });
+    });
+    $up.on("click", function() {
+        $("body").velocity("scroll", {
+            duration: 5000,
+            easing: "easeInBack"
+        });
+    });
+</script>
+
+
+<script src="js/main.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/velocity/1.4.3/velocity.min.js"></script> <!-- velocity -->
+
+
+
+</body>
+</html>
